@@ -1,0 +1,30 @@
+<style>
+div1 {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #dddddd;
+    width: 300px;
+    border-radius: 25px;
+}
+</style>
+
+<h1><%= @question.name %></h1><%if @chosen != nil%><%=link_to "Додати до обраних", chosen_question_path(@question.id)%><%else%><%=link_to "Видалити із обраних", chosen_question_path(@question.id)%><%end%>
+<h4>Зміст: <%= @question.text %></h4>
+<p>Кількість відповідей: <%= @question.count %></p>
+<p>Категорія: <%= @question.category.name %></p>
+<hr>
+<table>
+<tr>
+<td>Відповідь</td><td>Хто</td><td>Оцінка</td><td>Дії</td>
+</tr>
+<% @answers.each do |answer| %>
+<tr>
+<%=render '/answers/elem', answer:answer%>
+</tr>
+<%end%>
+</table>
+<div align="center">
+<%=form_for :answer, url:question_answers_path(@question.id) do |f|%>
+<%=render '/answers/form', f:f %>
+<%end%>
+</div>

@@ -1,0 +1,4 @@
+<td>Назва: <%=link_to question.name, question_path(question.id) %></td>
+<td>Автор: <%=image_tag question.user.avatar.url, width:60,height:60%><%=question.user.nickname%>(<%=question.user.email%>)</td>
+<td>Кількість відповідей: <%= question.count %></td>
+<td>Категорія: <%= question.category.name %></td>

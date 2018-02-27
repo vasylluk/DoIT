@@ -1,0 +1,4 @@
+<td><%=anscomment.text%></td>
+<td><%=image_tag anscomment.user.avatar.url, width:60,height:60%><%=anscomment.user.nickname%>(<%=anscomment.user.email%>)</td>
+<td><%=link_to "Видалити", question_anscomment_path(anscomment.answer.id,anscomment.id), method: :delete%></td>
+<td><%=link_to "Змінити", edit_question_anscomment_path%></td>

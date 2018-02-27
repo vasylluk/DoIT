@@ -1,0 +1,5 @@
+<td><%=answer.text%></td>
+<td><%=image_tag answer.user.avatar.url, width:60,height:60%><%=answer.user.nickname%>(<%=answer.user.email%>)</td>
+<td><%=link_to '+', positiv_vote_path(answer.id)%> <%=answer.scores%>  <%=link_to '-', negativ_vote_path(answer.id)%></td>
+<td><%=link_to "Видалити", question_answer_path(answer.question.id,answer.id), method: :delete%></td>
+<td><%=link_to "Comment",  answer_anscomments_path(anscomment.answer.id,anscomment.id)%></td>

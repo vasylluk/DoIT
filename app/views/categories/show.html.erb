@@ -1,0 +1,8 @@
+<h1><%=@category.name%></h1>
+<table>
+<% @questions.each do |question|%>
+<tr>
+<%=render '/questions/elem', question:question%>
+</tr>
+<%end%>
+</table>

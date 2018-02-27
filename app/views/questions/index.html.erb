@@ -1,0 +1,8 @@
+<%=link_to 'New' ,new_question_path %>
+<table>
+<%@questions.each do |question| %>
+<tr>
+<%=render 'elem', question:question%>
+</tr>
+<%end%>
+</table>

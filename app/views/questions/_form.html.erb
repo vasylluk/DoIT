@@ -1,0 +1,11 @@
+<p><%= f.label :category %></p>
+<%= f.select 'category_id', options_from_collection_for_select(Category.all, 'id', 'name')%>
+
+<p> <%= f.label "Назва" %></p>
+<%= f.text_field :name %><br />
+
+<p><%= f.label "Текст"%></p>
+<%= f.text_area :text, :class => "tinymce", :rows => 40, :cols => 120 %>
+<%= tinymce %>
+
+<p><%= f.submit "Зберегти"%></p>
